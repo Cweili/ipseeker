@@ -1,0 +1,8 @@
+/build
+/bin
+
+*.class
+
+# Package Files #
+*.war
+*.ear
