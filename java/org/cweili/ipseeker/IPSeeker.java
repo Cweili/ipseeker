@@ -40,6 +40,12 @@ import org.apache.commons.logging.LogFactory;
  * 
  * @author luma
  */
+/**
+ * 
+ * @author Cweili
+ * @version 2013-4-16 下午3:13:10
+ * 
+ */
 public class IPSeeker {
 	/**
 	 * <pre>
@@ -65,7 +71,6 @@ public class IPSeeker {
 	}
 
 	// 一些固定常量，比如记录长度等等
-	private static final String IP_FILE = "qqwry.dat";
 	private static final int IP_RECORD_LENGTH = 7;
 	private static final byte REDIRECT_MODE_1 = 0x01;
 	private static final byte REDIRECT_MODE_2 = 0x02;
@@ -100,7 +105,7 @@ public class IPSeeker {
 		b4 = new byte[4];
 		b3 = new byte[3];
 		try {
-			ipFile = new RandomAccessFile(getRoot() + IP_FILE, "r");
+			ipFile = new RandomAccessFile(IpDataBase.getInstance().getIpFile(), "r");
 		} catch (Exception e) {
 			log.error("IP地址信息文件格式有错误，IP显示功能将无法使用", e);
 			ipFile = null;
@@ -667,12 +672,4 @@ public class IPSeeker {
 		return "";
 	}
 
-	/**
-	 * 返回classpath
-	 * 
-	 * @return 返回classpath
-	 */
-	private String getRoot() {
-		return this.getClass().getResource("/").toString().substring(6);
-	}
 }
