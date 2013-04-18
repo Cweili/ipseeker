@@ -11,6 +11,7 @@ Dependency
 
 Examples
 -----------
-
+```java
 	IPSeeker.getInstance().getCountry("211.86.224.9");
 	IPSeeker.getInstance().getArea("211.86.224.9");
+```
